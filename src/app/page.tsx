@@ -10,7 +10,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Wand2, Gamepad2, User as UserIcon } from 'lucide-react';
+import { Loader2, Wand2, Gamepad2, User as UserIcon, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();
@@ -141,10 +142,16 @@ export default function Home() {
                </Button>
            </form>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex flex-col gap-4">
             <p className="text-xs text-muted-foreground text-center w-full">
                 Enter your name, then create a game or join one with an ID.
             </p>
+             <Button asChild variant="link" className="w-full text-muted-foreground">
+                <Link href="/rules">
+                  <BookOpen className="mr-2 h-4 w-4" />
+                  How to Play
+                </Link>
+            </Button>
         </CardFooter>
       </Card>
     </main>
