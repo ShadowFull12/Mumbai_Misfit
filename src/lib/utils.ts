@@ -4,3 +4,7 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+export function generatePlayerId(): string {
+    return 'player_' + Math.random().toString(36).substr(2, 9);
+}
